@@ -1,0 +1,197 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background: #212121;
+  color: #fff;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 400;
+  letter-spacing: .5px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+}
+
+main #grid {
+  display: -ms-grid;
+  display: grid;
+  height: 650px;
+  width: 850px;
+  -ms-grid-columns: (1fr); /*-ms-grid-columns: (1fr)[4];*/
+      grid-template-columns: repeat(4, 1fr);
+  -ms-grid-rows: (1fr); /*-ms-grid-rows: (1fr)[4];*/
+      grid-template-rows: repeat(4, 1fr);
+  background: #8672a9;
+  padding: 24px;
+  grid-gap: 10px;
+}
+
+main #grid .card {
+  border: 1px solid #cacaca;
+  margin: 5px;
+  font-size: 18px;
+  text-transform: uppercase;
+  text-align: center;
+  height: 185px;
+  overflow: hidden;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+}
+
+main #grid .card img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+main #grid .card.eliminated {
+  opacity: 0.3;
+  -webkit-filter: grayscale(50%);
+          filter: grayscale(50%);
+  pointer-events: none;
+}
+
+main #grid .card:hover {
+  border: 3px solid #fff;
+}
+
+main #grid .card span {
+  position: absolute;
+  background-color: #6a4d9a;
+  width: 100%;
+  top: 0;
+  right: 0;
+}
+
+aside {
+  margin: 0 20px;
+  height: 650px;
+}
+
+aside #logo img {
+  height: 100px;
+  display: block;
+  margin: 0 auto;
+}
+
+aside .content span {
+  font-size: 18px;
+}
+
+aside .content select {
+  width: 190px;
+  margin: 15px 0;
+  height: 40px;
+}
+
+aside .content select:enabled {
+  border: 5px solid #FFC107;
+  border-radius: 1px;
+}
+
+aside .content button {
+  width: 60px;
+  height: 30px;
+  margin: 8px 8px 0 0;
+}
+
+aside .content .selected-card {
+  height: 200px;
+  width: 200px;
+  margin: 30px 0;
+}
+
+aside .content .selected-card img {
+  height: 100%;
+  margin: 0;
+  -webkit-animation: fadeIn .2s;
+          animation: fadeIn .2s;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+aside .content .computer {
+  width: 220px;
+}
+
+aside .content .computer p {
+  display: block;
+  margin: 10px 0;
+  height: 40px;
+}
+
+@media all and (max-width: 699px) {
+  main #grid {
+    -ms-grid-columns: (1fr); /*-ms-grid-columns: (1fr)[2];*/
+    grid-template-columns: repeat(2, 1fr);
+    height: auto;
+  }
+}
+
+@media all and (max-width: 559px) {
+  main {
+    height: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  main #grid {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+    width: 85vw;
+    margin-bottom: 40px;
+  }
+  main aside {
+    height: auto;
+    margin: 40px 0 20px 0;
+  }
+  main aside .content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-top: 40px;
+  }
+  main aside .content .selected-card {
+    margin: 30px;
+  }
+  main aside .content .selected-card img {
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=style.css.map */
